@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Notes App Editor</title>
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+        <style> 
+
+		</style>
+	</head>
+	<body>
+
+		<div class="container" id="wrapper" style="text-align: center;">
+			
+			<div class="row" style="text-align: center; margin-top: 10vh;">
+				<div class="col-lg-12" id="content">
+					<h2>THE NOTES APP!</h2>
+				</div>
+			</div>
+		</div>		
+		<br>
+		{% if edit %}
+			<form action = "{% url 'edit_note_editor' note.id %}" method="POST" >			
+		{% else %}
+			<form action = "{% url 'add_note_editor' %}" method="POST" >			
+		{% endif %}
+		
+			<div class="container">
+				<div class="card">
+					
+					{% csrf_token %}
+						<div class="card-header">
+							{{ form.title }}
+							<!-- <input type="" name="" value="{{note.title}}" placeholder="Title" style="width: 100%;"> -->
+						</div>
+						<div class="card-body">
+							{{ form.content }}
+							<!-- <input type="" name="" value="{{note.content}}" placeholder="Content"> -->
+						</div>
+				</div>
+			</div>
+			<div class="container">
+				<button type="submit" class="btn btn-primary" style="float: right;">Done</button>
+			</div>
+		</form>
+	</body>
+</html>
