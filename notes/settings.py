@@ -27,7 +27,7 @@ SECRET_KEY = 'i_vt+g_*yl=c0ljgpvgfbfxp$7g5f_^)o7!)y0s37rror2)ugm'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://sleepy-beyond-24508.herokuapp.com']
+ALLOWED_HOSTS = ['https://notes-mustafa.herokuapp.com']
 
 
 # Application definition
