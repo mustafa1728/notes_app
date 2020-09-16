@@ -6,7 +6,7 @@ class NoteForm(forms.Form):
 			attrs = {'placeholder': 'Title', 
 					'style': 'width: 100%; font-size: 20px;',
 					}))
-	content = forms.CharField(max_length = 1000,
+	content = forms.CharField(max_length = 10000,
 		widget = forms.Textarea(
 			attrs = {'placeholder': 'Content', 
 					'style': 'width: 100%; font-size: 20px;',

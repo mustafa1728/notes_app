@@ -36,7 +36,13 @@
 		<div class="container"  >
 			<div class="row match-my-cols">
 				{% for note in notes_list %}
+						{% if note.size == 1 %}
 						<div class="col-lg-4" style="margin-top: 2vh;">
+						{% elif note.size == 2 %}
+						<div class="col-lg-8" style="margin-top: 2vh;">
+						{% else %}
+						<div class="col-lg-12" style="margin-top: 2vh;">
+						{% endif %}
 							<div class="card box" style="font-size: 20px; ">
 								
 								<div class="card-header" >
@@ -49,7 +55,11 @@
 									</span>
 								</div>
 								<div class="card-body">
-				                {{ note.content }}
+								<span style="float: right;">
+				                	<p style="font-size: 12px;">{{ note.time }}</p>
+				                </span>
+				                {{ note.content|linebreaks }}
+				                
 				                <br>
 				                
 				                
